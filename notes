@@ -1,12 +1,34 @@
 npm run-script deploy
 
+https://hackernoon.com/tutorial-creating-and-managing-a-node-js-server-on-aws-part-1-d67367ac5171
+https://hackernoon.com/tutorial-creating-and-managing-a-node-js-server-on-aws-part-2-5fbdea95f8a1
+https://hackernoon.com/setting-up-node-js-with-a-database-part-1-3f2461bdd77f
 
+
+
+const express = require('express')
+const app = express()
+app.get('/', (req, res) => {
+  res.send('finishing up tutorial #2 ... ah yeah!  ADRI FOR LIFE')
+})
+app.listen(3000, () => console.log('Server running on port 3000'))
+
+cd Desktop/tutorial-node-database
 
 chmod 400 ec2_expressv1.pem
 
 cd Downloads
 
-
+ 	mkdir tutorial-node-database
+cd tutorial-node-database
+touch knexfile.js
+touch index.js
+touch store.js
+mkdir public
+touch public/index.html
+touch public/app.js
+# choose all defaults when prompted
+npm init
 
 git clone https://github.com/bryceroche/hello-nodejs.git
 
@@ -18,6 +40,7 @@ rm -R node_modules
 
 
 pm2 deploy ecosystem.config.js production
+mysqladmin -u root password 'password'
 
 
 https://hackernoon.com/tutorial-creating-and-managing-a-node-js-server-on-aws-part-1-d67367ac5171
