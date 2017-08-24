@@ -1,0 +1,114 @@
+npm run-script deploy
+
+
+
+chmod 400 ec2_expressv1.pem
+
+cd Downloads
+
+
+
+git clone https://github.com/bryceroche/hello-nodejs.git
+
+http://localhost:3000/
+
+rm -R hello-world-node-express
+rm -R node-js-sample
+rm -R node_modules
+
+
+pm2 deploy ecosystem.config.js production
+
+
+https://hackernoon.com/tutorial-creating-and-managing-a-node-js-server-on-aws-part-1-d67367ac5171
+
+ec2-54-149-95-169.us-west-2.compute.amazonaws.com:3000
+ec2-54-149-95-169.us-west-2.compute.amazonaws.com:80
+
+mkdir tutorial
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+source ~/.bashrc
+
+cat /etc/nginx/sites-available/tutorial
+
+sudo ln -s /etc/nginx/sites-available/tutorial /etc/nginx/sites-enabled/tutorial
+
+https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor
+sudo env PATH=$PATH:/home/ubuntu/.nvm/versions/node/v7.10.1/bin /home/ubuntu/.nvm/versions/node/v7.10.1/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
+ubuntu@ip-172-31-47-122:~/server$ 
+
+
+nano ~/.bashrc
+
+or create a new repository on the command line
+
+echo "# hello-nodejs" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/bryceroche/hello-nodejs.git
+git push -u origin master
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/bryceroche/hello-nodejs.git
+git push -u origin master
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project
+
+git add .
+git commit -m "Ze server."
+git push
+
+git ls-tree -r master --name-only
+git status
+
+git rm -r --cached node_modules/
+
+
+ssh-keygen -t rsa
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDzrz3oaKaHX5K2nU6qXvG6XVUlca3gMYNgmNLmArNseWyjYO+GXc09GgnV5rAfsP9BQemIMtWSVseHQT3hKdTSEPgl5xtkEjcRYVWyQ6YxYLxuKl+9lzJVgCPxf/+DJrxJck71nyyvTkmNPl0unZ0A+qA34/qPEy97TSd8v+BNyL1Bh/Z47HvlOnkcVwUFUjOD7nasUw9EBFVyIlpexkam5FDIpaRYtMkYO+LuBbuRA9VsfjVOyr0u9eOsHm5wPLgfK3aK7hkz+21gPcIW/nPX6X2cBizTaNO4kIcepZJueGBDElZJcn/0wQFmxhkO5j5+patttH0lVrdRNDIOzDel ubuntu@ip-172-31-47-122
+
+
+git clone https://github.com/bryceroche/hello-nodejs
+
+rm -r ~/server/hello-nodejs/hello-nodejs
+
+rm -rf ~/tutorial-pt-2
+
+ubuntu@ip-172-31-47-122:~/server/hello-nodejs$ cat index.js
+const express = require('express')
+const app = express()
+app.get('/', (req, res) => {
+  res.send('another message .... from hello world exmample!')
+})
+app.listen(3000, () => console.log('Server running on port 3000'))
+ubuntu@ip-172-31-47-122:~/server/hello-nodejs$ 
+
+
+Initialized empty Git repository in /Users/bryceroche/Desktop/hello/.git/
+
+
+module.exports = {
+  apps: [{
+    name: 'hello-nodejs',
+    script: './index.js'
+  }],
+  deploy: {
+    production: {
+      user: 'ubuntu',
+      host: 'ec2-54-149-95-169.us-west-2.compute.amazonaws.com',
+      key: '~/Downloads/ec2_expressv1.pem',
+      ref: 'origin/master',
+      repo: 'https://github.com/bryceroche/hello-nodejs',
+      path: '/home/ubuntu/server/hello-nodejs',
+      'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
+    }
+  }
+}
+
+Identity added: /home/ubuntu/.ssh/id_rsa (/home/ubuntu/.ssh/id_rsa)
+
+
